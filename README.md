@@ -43,7 +43,7 @@ Where $W = $ damage from equipped weapon and unequipped give 1 dmg. The $C$ note
 **Hero Display**
 The hero can display information: name, class, level, Total states and damage.
 
-## Components tree
+## Class Interaction Diagram
 To begin the implementation of the application, there have been developed a class interaction diagram to show the interaction between classes.The class interaction diagram can be found in the ClassInteractionDiagram.pdf. 
 As the diagram is created before any code is written and will not be updated (as it will be part of the overall grade), the code may vary some degree from the diagram. The diagram also contain the calculation on some of the metodes.
 ## Status of the Project
