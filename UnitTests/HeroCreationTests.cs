@@ -49,5 +49,47 @@ namespace UnitTests
         }
         #endregion
 
+        #region Class Ranger
+        [Fact]
+        public void Constructor_InitializeRangerWithName_ShouldCreateRangerLevel1()
+        {
+            //Arrange
+            string name = "Legolas";
+            Ranger elverPrince = new Ranger(name);
+            List<WeaponType> weapons = new List<WeaponType>()
+            {
+                WeaponType.Bow,
+            };
+            List<ArmorType> armors = new List<ArmorType>()
+            {
+                ArmorType.Leather,
+                ArmorType.Mail,
+            };
+            object[] expected = new object[]
+            {
+                name,
+                1,
+                1,
+                7,
+                1,
+                weapons,
+                armors
+            };
+            //Act
+            object[] actual = new object[]
+            {
+                elverPrince.Name,
+                elverPrince.Level,
+                elverPrince.HeroAttributes.Strength,
+                elverPrince.HeroAttributes.Dexterity,
+                elverPrince.HeroAttributes.Intelligence,
+                elverPrince.ValidWeaponTypes,
+                elverPrince.ValidArmorTypes
+            };
+            //Assert
+            Assert.Equal(expected, actual);
+        }
+        #endregion
+
     }
 }
