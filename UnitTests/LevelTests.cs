@@ -12,6 +12,19 @@ namespace UnitTests
         {
             //Arrange
             Mage whiteMage = new Mage("Gandalf");
+            whiteMage.LevelUp();
+            int level = 2;
+            int[] expected = new int[] { level, 2, 2, 13 };
+            //Act
+            int[] actual = new int[] 
+            { 
+                whiteMage.Level, 
+                whiteMage.HeroAttributes.Strength, 
+                whiteMage.HeroAttributes.Dexterity, 
+                whiteMage.HeroAttributes.Intelligence 
+            };
+            //Assert
+            Assert.Equal(expected, actual);
 
         }
         #endregion

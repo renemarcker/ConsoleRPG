@@ -7,5 +7,13 @@ namespace ConsoleRPG.Heroes
         {
             _name = name;
         }
+
+        public override void LevelUp()
+        {
+            _level++;
+            _heroAttributes.Strength += 1;
+            _heroAttributes.Dexterity+= 1;
+            _heroAttributes.Intelligence += 5;
+        }
     }
 }

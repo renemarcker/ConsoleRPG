@@ -12,5 +12,10 @@ namespace ConsoleRPG.Heroes
         {
             _name = name;
         }
+
+        public override void LevelUp()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

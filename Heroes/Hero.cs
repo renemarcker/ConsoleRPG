@@ -37,5 +37,8 @@ namespace ConsoleRPG.Heroes
             _validArmorTypes = armorProficiency;
 
         }
+
+        public abstract void LevelUp();
+
     }
 }
