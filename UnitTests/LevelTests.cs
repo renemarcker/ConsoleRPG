@@ -25,7 +25,6 @@ namespace UnitTests
             };
             //Assert
             Assert.Equal(expected, actual);
-
         }
         #endregion
         
@@ -34,6 +33,19 @@ namespace UnitTests
         public void LevelUp_RangerToLevel2_ShouldReturnLevel2RangerAttributes()
         {
             Ranger elvenPrince = new Ranger("Legolas");
+            elvenPrince.LevelUp();
+            int level = 2;
+            int[] expected = new int[] { level, 2, 12, 2 };
+            //Act
+            int[] actual = new int[]
+            {
+                elvenPrince.Level,
+                elvenPrince.HeroAttributes.Strength,
+                elvenPrince.HeroAttributes.Dexterity,
+                elvenPrince.HeroAttributes.Intelligence
+            };
+            //Assert
+            Assert.Equal(expected, actual);
         }
 
         #endregion
