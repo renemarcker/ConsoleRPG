@@ -91,5 +91,48 @@ namespace UnitTests
         }
         #endregion
 
+        #region Class Rogue
+        [Fact]
+        public void Constructor_InitializeRogueWithName_ShouldCreateRogueLevel1()
+        {
+            //Arrange
+            string name = "Gwaine";
+            Rogue merlinKnight = new Rogue(name);
+            List<WeaponType> weapons = new List<WeaponType>()
+            {
+                WeaponType.Dagger,
+                WeaponType.Sword,
+            };
+            List<ArmorType> armors = new List<ArmorType>()
+            {
+                ArmorType.Leather,
+                ArmorType.Mail,
+            };
+            object[] expected = new object[]
+            {
+                name,
+                1,
+                2,
+                6,
+                1,
+                weapons,
+                armors
+            };
+            //Act
+            object[] actual = new object[]
+            {
+                merlinKnight.Name,
+                merlinKnight.Level,
+                merlinKnight.HeroAttributes.Strength,
+                merlinKnight.HeroAttributes.Dexterity,
+                merlinKnight.HeroAttributes.Intelligence,
+                merlinKnight.ValidWeaponTypes,
+                merlinKnight.ValidArmorTypes
+            };
+            //Assert
+            Assert.Equal(expected, actual);
+        }
+        #endregion
+
     }
 }
