@@ -76,6 +76,19 @@ namespace UnitTests
         public void LevelUp_WarriorToLevel2_ShouldReturnLevel2WarriorAttributes()
         {
             Warrior king = new Warrior("Arthur");
+            king.LevelUp();
+            int level = 2;
+            int[] expected = new int[] { level, 8, 4, 2 };
+            //Act
+            int[] actual = new int[]
+            {
+                king.Level,
+                king.HeroAttributes.Strength,
+                king.HeroAttributes.Dexterity,
+                king.HeroAttributes.Intelligence
+            };
+            //Assert
+            Assert.Equal(expected, actual);
         }
         #endregion
     }

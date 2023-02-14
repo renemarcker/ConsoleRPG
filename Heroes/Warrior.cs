@@ -15,7 +15,10 @@ namespace ConsoleRPG.Heroes
 
         public override void LevelUp()
         {
-            throw new NotImplementedException();
+            _level++;
+            _heroAttributes.Strength += 3;
+            _heroAttributes.Dexterity += 2;
+            _heroAttributes.Intelligence += 1;
         }
     }
 }
