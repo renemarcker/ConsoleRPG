@@ -134,5 +134,49 @@ namespace UnitTests
         }
         #endregion
 
+        #region Class Warrior
+        [Fact]
+        public void Constructor_InitializeWarriorWithName_ShouldCreateWarriorLevel1()
+        {
+            //Arrange
+            string name = "Arthur";
+            Warrior king = new Warrior(name);
+            List<WeaponType> weapons = new List<WeaponType>()
+            {
+                WeaponType.Axe,
+                WeaponType.Hammer,
+                WeaponType.Sword,
+            };
+            List<ArmorType> armors = new List<ArmorType>()
+            {
+                ArmorType.Mail,
+                ArmorType.Plate
+            };
+            object[] expected = new object[]
+            {
+                name,
+                1,
+                5,
+                2,
+                1,
+                weapons,
+                armors
+            };
+            //Act
+            object[] actual = new object[]
+            {
+                king.Name,
+                king.Level,
+                king.HeroAttributes.Strength,
+                king.HeroAttributes.Dexterity,
+                king.HeroAttributes.Intelligence,
+                king.ValidWeaponTypes,
+                king.ValidArmorTypes
+            };
+            //Assert
+            Assert.Equal(expected, actual);
+        }
+        #endregion
+
     }
 }
