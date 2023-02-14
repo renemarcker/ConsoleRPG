@@ -55,6 +55,19 @@ namespace UnitTests
         public void LevelUp_RogueToLevel2_ShouldReturnLevel2RogueAttributes()
         {
             Rogue knight = new Rogue("Gwaine");
+            knight.LevelUp();
+            int level = 2;
+            int[] expected = new int[] { level, 3, 10, 2 };
+            //Act
+            int[] actual = new int[]
+            {
+                knight.Level,
+                knight.HeroAttributes.Strength,
+                knight.HeroAttributes.Dexterity,
+                knight.HeroAttributes.Intelligence
+            };
+            //Assert
+            Assert.Equal(expected, actual);
         }
         #endregion
 
