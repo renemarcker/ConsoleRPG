@@ -14,7 +14,7 @@ namespace UnitTests.Hero
             Mage whiteMage = new Mage(name);
             //Act and Assert
             Assert.Equal(name, whiteMage.Name);
-            Assert.Equal(1, whiteMage.Level);
+            Assert.Equal(2, whiteMage.Level);
             Assert.Equal(1, whiteMage.HeroAttributes.Strength);
             Assert.Equal(1, whiteMage.HeroAttributes.Dexterity);
             Assert.Equal(8, whiteMage.HeroAttributes.Intelligence);
