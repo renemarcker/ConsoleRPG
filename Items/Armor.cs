@@ -7,7 +7,7 @@ namespace ConsoleRPG.Items
     public class Armor : Item
     {
         private ArmorType _armorType;
-        private HeroAttributes _armorAttributes;
+        private HeroAttributes _armorAttributes = new HeroAttributes();
 
         public ArmorType ArmorType { get => _armorType;  }
         public HeroAttributes ArmorAttributes { get => _armorAttributes; }

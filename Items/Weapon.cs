@@ -3,7 +3,7 @@ using ConsoleRPG.Items.Enums;
 
 namespace ConsoleRPG.Items
 {
-    internal class Weapon : Item
+    public class Weapon : Item
     {
         private WeaponType _weaponType;
         private int _damage;
