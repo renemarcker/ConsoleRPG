@@ -1,4 +1,4 @@
-﻿namespace ConsoleRPG.Items
+﻿namespace ConsoleRPG.Items.Enums
 {
     public enum WeaponType
     {

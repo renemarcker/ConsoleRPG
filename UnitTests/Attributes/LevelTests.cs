@@ -1,11 +1,10 @@
-﻿
+﻿using ConsoleRPG.Heroes.Classes;
 
-using ConsoleRPG.Heroes;
-
-namespace UnitTests
+namespace UnitTests.Attributes
 {
     public class LevelTests
     {
+
         #region Level-up Mage
         [Fact]
         public void LevelUp_MageToLevel2_ShouldReturnLevel2MageAttributes()
@@ -16,18 +15,18 @@ namespace UnitTests
             int level = 2;
             int[] expected = new int[] { level, 2, 2, 13 };
             //Act
-            int[] actual = new int[] 
-            { 
-                whiteMage.Level, 
-                whiteMage.HeroAttributes.Strength, 
-                whiteMage.HeroAttributes.Dexterity, 
-                whiteMage.HeroAttributes.Intelligence 
+            int[] actual = new int[]
+            {
+                whiteMage.Level,
+                whiteMage.HeroAttributes.Strength,
+                whiteMage.HeroAttributes.Dexterity,
+                whiteMage.HeroAttributes.Intelligence
             };
             //Assert
             Assert.Equal(expected, actual);
         }
         #endregion
-        
+
         #region Level-up Ranger
         [Fact]
         public void LevelUp_RangerToLevel2_ShouldReturnLevel2RangerAttributes()

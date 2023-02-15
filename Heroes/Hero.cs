@@ -1,4 +1,5 @@
 ﻿using ConsoleRPG.Items;
+using ConsoleRPG.Items.Enums;
 
 namespace ConsoleRPG.Heroes
 {
@@ -7,6 +8,8 @@ namespace ConsoleRPG.Heroes
         protected string _name;
         protected int _level;
         protected HeroAttributes _heroAttributes = new HeroAttributes();
+        protected List<WeaponType> _validWeaponTypes = new List<WeaponType>();
+        protected List<ArmorType> _validArmorTypes = new List<ArmorType>();
         protected Dictionary<ItemSlot, Item> _equipments = new Dictionary<ItemSlot, Item>()
         {
             { ItemSlot.head,null },
@@ -14,10 +17,6 @@ namespace ConsoleRPG.Heroes
             { ItemSlot.legs,null },
             { ItemSlot.weapon,null },
         };
-
-
-        protected List <WeaponType> _validWeaponTypes = new List<WeaponType>();
-        protected List <ArmorType> _validArmorTypes = new List<ArmorType>();
 
         public string Name { get => _name; }
         public int Level { get => _level; }

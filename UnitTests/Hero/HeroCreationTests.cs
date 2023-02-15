@@ -1,7 +1,7 @@
-using ConsoleRPG.Heroes;
+using ConsoleRPG.Heroes.Classes;
 using ConsoleRPG.Items;
 
-namespace UnitTests
+namespace UnitTests.Hero
 {
     public class HeroCreationTests
     {

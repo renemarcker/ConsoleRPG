@@ -1,5 +1,4 @@
-﻿
-namespace UnitTests
+﻿namespace UnitTests.Equipments
 {
     public class EquipArmorTests
     {

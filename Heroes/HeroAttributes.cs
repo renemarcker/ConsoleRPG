@@ -1,4 +1,4 @@
-﻿namespace ConsoleRPG
+﻿namespace ConsoleRPG.Heroes
 {
     public class HeroAttributes
     {

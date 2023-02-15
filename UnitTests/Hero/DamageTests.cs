@@ -1,5 +1,4 @@
-﻿
-namespace UnitTests
+﻿namespace UnitTests.Hero
 {
     public class DamageTests
     {

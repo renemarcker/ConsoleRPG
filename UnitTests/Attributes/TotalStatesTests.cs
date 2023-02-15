@@ -1,5 +1,4 @@
-﻿
-namespace UnitTests
+﻿namespace UnitTests.Attributes
 {
     public class TotalStatesTests
     {
