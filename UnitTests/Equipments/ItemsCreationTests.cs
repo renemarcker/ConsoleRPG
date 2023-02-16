@@ -15,9 +15,9 @@ namespace UnitTests.Equipments
             int requiredLevel = 2;
             ItemSlot itemSlot = ItemSlot.body;
             ArmorType armorType = ArmorType.Plate;
-            HeroAttributes attributes = new HeroAttributes(1, 0, 0);
+            HeroAttributes attributes = new (1, 0, 0);
             //Act
-            Armor commonBodyPlate = new Armor(name, requiredLevel, itemSlot, armorType, attributes);
+            Armor commonBodyPlate = new (name, requiredLevel, itemSlot, armorType, attributes);
             //Assert
             Assert.Equal(name,commonBodyPlate.Name);
             Assert.Equal(requiredLevel, commonBodyPlate.RequiredLevel);
@@ -37,7 +37,7 @@ namespace UnitTests.Equipments
             WeaponType weaponType = WeaponType.Axe;
             int dmg = 45;
             //Act
-            Weapon legendaryAxe = new Weapon(name, requiredLevel, dmg, weaponType);
+            Weapon legendaryAxe = new (name, requiredLevel, dmg, weaponType);
             //Assert
         }
         #endregion

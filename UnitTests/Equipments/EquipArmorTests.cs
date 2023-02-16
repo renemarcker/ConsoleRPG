@@ -12,8 +12,8 @@ namespace UnitTests.Equipments
         public void EquipArmor_EquipValidArmorBody_ShouldEquipArmorToBodySlot()
         {
             //Arrange
-            Warrior peasant = new Warrior("Rene");
-            Armor bodyArmor = new Armor("Plate Chest",1, ItemSlot.body, ArmorType.Plate, new HeroAttributes(5,1,0));
+            Warrior peasant = new ("Rene");
+            Armor bodyArmor = new ("Plate Chest",1, ItemSlot.body, ArmorType.Plate, new HeroAttributes(5,1,0));
             //Act
             peasant.EquipArmor(bodyArmor);
             //Assert
@@ -26,8 +26,8 @@ namespace UnitTests.Equipments
         public void EquipArmor_EquipValidArmorLegs_ShouldEquipArmorToLegsSlot()
         {
             //Arrange
-            Warrior peasant = new Warrior("Rene");
-            Armor legsArmor = new Armor("Plate Pants", 1, ItemSlot.legs, ArmorType.Plate, new HeroAttributes(2, 2, 0));
+            Warrior peasant = new ("Rene");
+            Armor legsArmor = new ("Plate Pants", 1, ItemSlot.legs, ArmorType.Plate, new HeroAttributes(2, 2, 0));
             //Act
             peasant.EquipArmor(legsArmor);
             //Assert
@@ -40,8 +40,8 @@ namespace UnitTests.Equipments
         public void EquipArmor_EquipValidArmorHead_ShouldEquipArmorToHeadSlot()
         {
             //Arrange
-            Warrior peasant = new Warrior("Rene");
-            Armor headArmor = new Armor("Plate Helmet", 1, ItemSlot.head, ArmorType.Plate, new HeroAttributes(2, 2, 0));
+            Warrior peasant = new ("Rene");
+            Armor headArmor = new ("Plate Helmet", 1, ItemSlot.head, ArmorType.Plate, new HeroAttributes(2, 2, 0));
             //Act
             peasant.EquipArmor(headArmor);
             //Assert
@@ -54,8 +54,8 @@ namespace UnitTests.Equipments
         public void EquipArmor_EquipArmorWithInvalidLevel_ShouldThrowEquipException()
         {
             //Arrange
-            Warrior peasant = new Warrior("Rene");
-            Armor headArmor = new Armor("Plate Helmet", 10, ItemSlot.head, ArmorType.Plate, new HeroAttributes(2, 2, 0));
+            Warrior peasant = new ("Rene");
+            Armor headArmor = new ("Plate Helmet", 10, ItemSlot.head, ArmorType.Plate, new HeroAttributes(2, 2, 0));
             //Act and Assert
             Assert.Throws<EquipException>(() => peasant.EquipArmor(headArmor));
         }
@@ -67,8 +67,8 @@ namespace UnitTests.Equipments
         public void EquipArmor_EquipArmorWithInvalidArmorType_ShouldThrowEquipException()
         {
             //Arrange
-            Ranger jackOfAll = new Ranger("Rene");
-            Armor headArmor = new Armor("Plate Helmet", 1, ItemSlot.head, ArmorType.Plate, new HeroAttributes(2, 2, 0));
+            Ranger jackOfAll = new ("Rene");
+            Armor headArmor = new ("Plate Helmet", 1, ItemSlot.head, ArmorType.Plate, new HeroAttributes(2, 2, 0));
             //Act and Assert
             Assert.Throws<EquipException>(() => jackOfAll.EquipArmor(headArmor));
         }

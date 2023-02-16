@@ -12,8 +12,8 @@ namespace UnitTests.Hero
         {
             //Arrange
             string name = "Gandalf";
-            Mage whiteMage = new Mage(name);
-            HeroAttributes mageStart = new HeroAttributes(1, 1, 8);
+            Mage whiteMage = new (name);
+            HeroAttributes mageStart = new (1, 1, 8);
             //Act and Assert
             Assert.Equal(name, whiteMage.Name);
             Assert.Equal(1, whiteMage.Level);
@@ -27,8 +27,8 @@ namespace UnitTests.Hero
         {
             //Arrange
             string name = "Legolas";
-            Ranger elvenPrince = new Ranger(name);
-            HeroAttributes rangerStart = new HeroAttributes(1, 7, 1);
+            Ranger elvenPrince = new (name);
+            HeroAttributes rangerStart = new (1, 7, 1);
             //Act and Assert
             Assert.Equal(name, elvenPrince.Name);
             Assert.Equal(1, elvenPrince.Level);
@@ -42,8 +42,8 @@ namespace UnitTests.Hero
         {
             //Arrange
             string name = "Gwaine";
-            Rogue knight = new Rogue(name);
-            HeroAttributes rogueStart = new HeroAttributes(2, 6, 1);
+            Rogue knight = new (name);
+            HeroAttributes rogueStart = new (2, 6, 1);
             //Act and Assert
             Assert.Equal(name, knight.Name);
             Assert.Equal(1, knight.Level);
@@ -57,8 +57,8 @@ namespace UnitTests.Hero
         {
             //Arrange
             string name = "Arthur";
-            Warrior king = new Warrior(name);
-            HeroAttributes warriorStart = new HeroAttributes(5, 2, 1);
+            Warrior king = new (name);
+            HeroAttributes warriorStart = new (5, 2, 1);
             //Act and Assert
             Assert.Equal(name, king.Name);
             Assert.Equal(1, king.Level);

@@ -12,7 +12,7 @@ namespace ConsoleRPG.Heroes.Classes
         public override void LevelUp()
         {
             _level++;
-            HeroAttributes mageLevelUp = new HeroAttributes(1, 1, 5);
+            HeroAttributes mageLevelUp = new (1, 1, 5);
             _heroAttributes += mageLevelUp;
         }
     }

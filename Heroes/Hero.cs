@@ -59,5 +59,12 @@ namespace ConsoleRPG.Heroes
                 throw new EquipException("The hero do not meet the required level for item.");
             _equipments[armor.Slot] = armor;
         }
+
+        public HeroAttributes TotalAttributes()
+        {
+            HeroAttributes total = new (0, 0, 0);
+
+            return total;
+        }
     }
 }

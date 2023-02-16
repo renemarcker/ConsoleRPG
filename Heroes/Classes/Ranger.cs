@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 using ConsoleRPG.Items.Enums;
 
 namespace ConsoleRPG.Heroes.Classes
@@ -17,7 +13,7 @@ namespace ConsoleRPG.Heroes.Classes
         public override void LevelUp()
         {
             _level++;
-            HeroAttributes rangerLevelUp = new HeroAttributes(1, 5, 1);
+            HeroAttributes rangerLevelUp = new (1, 5, 1);
             _heroAttributes += rangerLevelUp;
         }
     }

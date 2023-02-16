@@ -14,7 +14,7 @@ namespace UnitTests.Equipments
         public void EquipWeapon_EquipValidWeapon_ShouldEquipWeaponToSlot()
         {
             //Arrange
-            Warrior codeWarrior = new Warrior("Sean");
+            Warrior codeWarrior = new ("Sean");
             codeWarrior.LevelUp();
             codeWarrior.LevelUp();
             codeWarrior.LevelUp();
@@ -24,7 +24,7 @@ namespace UnitTests.Equipments
             codeWarrior.LevelUp();
             codeWarrior.LevelUp();
             codeWarrior.LevelUp();
-            Weapon twinBlade = new Weapon("Bug Slayer", 10, 42, WeaponType.Hammer);
+            Weapon twinBlade = new ("Bug Slayer", 10, 42, WeaponType.Hammer);
             //Act
             codeWarrior.EquipWeapon(twinBlade);
             //Assert
@@ -38,8 +38,8 @@ namespace UnitTests.Equipments
         public void EquipWeapon_EquipWeaponWithInvalidLevel_ShouldThrowEquipException()
         {
             //Arrange
-            Warrior peasant = new Warrior("Rene");
-            Weapon twinBlade = new Weapon("Bug Slayer", 10, 42, WeaponType.Hammer);
+            Warrior peasant = new ("Rene");
+            Weapon twinBlade = new ("Bug Slayer", 10, 42, WeaponType.Hammer);
             //Act and Assert
             Assert.Throws<EquipException>(() => peasant.EquipWeapon(twinBlade));
         }
@@ -51,8 +51,8 @@ namespace UnitTests.Equipments
         public void EquipWeapon_EquipWeaponWithInvalidWeaponType_ShouldThrowEquipException()
         {
             //Arrange
-            Ranger jackOfAll = new Ranger("Rene");
-            Weapon twinBlade = new Weapon("Bug Slayer", 1, 42, WeaponType.Hammer);
+            Ranger jackOfAll = new ("Rene");
+            Weapon twinBlade = new ("Bug Slayer", 1, 42, WeaponType.Hammer);
             //Act and Assert
             Assert.Throws<EquipException>(() => jackOfAll.EquipWeapon(twinBlade));
         }
