@@ -55,5 +55,14 @@ namespace ConsoleRPG.Heroes
             _equipments[ItemSlot.weapon] = weapon;
         }
 
+        public void EquipArmor(Armor armor)
+        {
+            if (!ValidArmorTypes.Contains(armor.ArmorType))
+                throw new EquipException("The weapon is not valid for the given class.");
+            if (_level < armor.RequiredLevel)
+                throw new EquipException("The hero do not meet the required level for item.");
+            _equipments[armor.Slot] = armor;
+        }
+
     }
 }

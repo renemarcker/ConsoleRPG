@@ -52,7 +52,7 @@ namespace UnitTests.Equipments
         {
             //Arrange
             Ranger jackOfAll = new Ranger("Rene");
-            Weapon twinBlade = new Weapon("Bug Slayer", 10, 42, WeaponType.Hammer);
+            Weapon twinBlade = new Weapon("Bug Slayer", 1, 42, WeaponType.Hammer);
             //Act and Assert
             Assert.Throws<EquipException>(() => jackOfAll.EquipWeapon(twinBlade));
         }
