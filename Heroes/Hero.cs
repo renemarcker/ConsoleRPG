@@ -63,7 +63,15 @@ namespace ConsoleRPG.Heroes
         public HeroAttributes TotalAttributes()
         {
             HeroAttributes total = new (0, 0, 0);
-
+            total += _heroAttributes;
+            foreach (var item in Equipments)
+            {
+                if(item.Key!=ItemSlot.weapon && item.Value!=null)
+                {
+                    Armor select = (Armor)item.Value;
+                    total += select.ArmorAttributes;
+                }
+            }
             return total;
         }
     }
