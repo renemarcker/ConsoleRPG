@@ -1,3 +1,4 @@
+using ConsoleRPG.Heroes;
 using ConsoleRPG.Heroes.Classes;
 using ConsoleRPG.Items;
 
@@ -12,12 +13,11 @@ namespace UnitTests.Hero
             //Arrange
             string name = "Gandalf";
             Mage whiteMage = new Mage(name);
+            HeroAttributes mageStart = new HeroAttributes(1, 1, 8);
             //Act and Assert
             Assert.Equal(name, whiteMage.Name);
             Assert.Equal(1, whiteMage.Level);
-            Assert.Equal(1, whiteMage.HeroAttributes.Strength);
-            Assert.Equal(1, whiteMage.HeroAttributes.Dexterity);
-            Assert.Equal(8, whiteMage.HeroAttributes.Intelligence);
+            Assert.True(mageStart.Equals(whiteMage.HeroAttributes));
         }
         #endregion
 
@@ -28,12 +28,11 @@ namespace UnitTests.Hero
             //Arrange
             string name = "Legolas";
             Ranger elvenPrince = new Ranger(name);
+            HeroAttributes rangerStart = new HeroAttributes(1, 7, 1);
             //Act and Assert
             Assert.Equal(name, elvenPrince.Name);
             Assert.Equal(1, elvenPrince.Level);
-            Assert.Equal(1, elvenPrince.HeroAttributes.Strength);
-            Assert.Equal(7, elvenPrince.HeroAttributes.Dexterity);
-            Assert.Equal(1, elvenPrince.HeroAttributes.Intelligence);
+            Assert.True(rangerStart.Equals(elvenPrince.HeroAttributes));
         }
         #endregion
 
@@ -44,12 +43,11 @@ namespace UnitTests.Hero
             //Arrange
             string name = "Gwaine";
             Rogue knight = new Rogue(name);
+            HeroAttributes rogueStart = new HeroAttributes(2, 6, 1);
             //Act and Assert
             Assert.Equal(name, knight.Name);
             Assert.Equal(1, knight.Level);
-            Assert.Equal(2, knight.HeroAttributes.Strength);
-            Assert.Equal(6, knight.HeroAttributes.Dexterity);
-            Assert.Equal(1, knight.HeroAttributes.Intelligence);
+            Assert.True(rogueStart.Equals(knight.HeroAttributes));
         }
         #endregion
 
@@ -60,12 +58,11 @@ namespace UnitTests.Hero
             //Arrange
             string name = "Arthur";
             Warrior king = new Warrior(name);
+            HeroAttributes warriorStart = new HeroAttributes(5, 2, 1);
             //Act and Assert
             Assert.Equal(name, king.Name);
             Assert.Equal(1, king.Level);
-            Assert.Equal(5, king.HeroAttributes.Strength);
-            Assert.Equal(2, king.HeroAttributes.Dexterity);
-            Assert.Equal(1, king.HeroAttributes.Intelligence);
+            Assert.True(warriorStart.Equals(king.HeroAttributes));
         }
         #endregion
 

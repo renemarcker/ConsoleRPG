@@ -9,7 +9,7 @@ namespace ConsoleRPG.Heroes.Classes
 {
     public class Ranger : Hero
     {
-        public Ranger(string name) : base(1, 1, 7, 1, new List<WeaponType> { WeaponType.Bow }, new List<ArmorType> { ArmorType.Leather, ArmorType.Mail })
+        public Ranger(string name) : base(1, new HeroAttributes(1, 7, 1), new List<WeaponType> { WeaponType.Bow }, new List<ArmorType> { ArmorType.Leather, ArmorType.Mail })
         {
             _name = name;
         }
@@ -17,9 +17,8 @@ namespace ConsoleRPG.Heroes.Classes
         public override void LevelUp()
         {
             _level++;
-            _heroAttributes.Strength += 1;
-            _heroAttributes.Dexterity += 5;
-            _heroAttributes.Intelligence += 1;
+            HeroAttributes rangerLevelUp = new HeroAttributes(1, 5, 1);
+            _heroAttributes += rangerLevelUp;
         }
     }
 }

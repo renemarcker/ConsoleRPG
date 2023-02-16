@@ -4,7 +4,7 @@ namespace ConsoleRPG.Heroes.Classes
 {
     public class Mage : Hero
     {
-        public Mage(string name) : base(1, 1, 1, 8, new List<WeaponType> { WeaponType.Staff, WeaponType.Wand }, new List<ArmorType> { ArmorType.Cloth })
+        public Mage(string name) : base(1, new HeroAttributes(1, 1, 8), new List<WeaponType> { WeaponType.Staff, WeaponType.Wand }, new List<ArmorType> { ArmorType.Cloth })
         {
             _name = name;
         }
@@ -12,9 +12,8 @@ namespace ConsoleRPG.Heroes.Classes
         public override void LevelUp()
         {
             _level++;
-            _heroAttributes.Strength += 1;
-            _heroAttributes.Dexterity += 1;
-            _heroAttributes.Intelligence += 5;
+            HeroAttributes mageLevelUp = new HeroAttributes(1, 1, 5);
+            _heroAttributes += mageLevelUp;
         }
     }
 }

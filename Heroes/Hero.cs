@@ -8,7 +8,7 @@ namespace ConsoleRPG.Heroes
     {
         protected string _name;
         protected int _level;
-        protected HeroAttributes _heroAttributes = new HeroAttributes();
+        protected HeroAttributes _heroAttributes = new HeroAttributes(0,0,0);
         protected List<WeaponType> _validWeaponTypes = new List<WeaponType>();
         protected List<ArmorType> _validArmorTypes = new List<ArmorType>();
         protected Dictionary<ItemSlot, Item> _equipments = new Dictionary<ItemSlot, Item>()
@@ -29,16 +29,12 @@ namespace ConsoleRPG.Heroes
 
         public Hero(
             int level,
-            int strength,
-            int dexterity,
-            int intelligence,
+            HeroAttributes heroAttributes,
             List<WeaponType> weaponProficiency,
             List<ArmorType> armorProficiency)
         { 
             _level = level;
-            _heroAttributes.Strength = strength;
-            _heroAttributes.Dexterity= dexterity;
-            _heroAttributes.Intelligence = intelligence;
+            _heroAttributes = heroAttributes;
             _validWeaponTypes = weaponProficiency;
             _validArmorTypes = armorProficiency;
 
@@ -63,6 +59,5 @@ namespace ConsoleRPG.Heroes
                 throw new EquipException("The hero do not meet the required level for item.");
             _equipments[armor.Slot] = armor;
         }
-
     }
 }

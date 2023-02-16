@@ -1,4 +1,5 @@
-﻿using ConsoleRPG.Heroes.Classes;
+﻿using ConsoleRPG.Heroes;
+using ConsoleRPG.Heroes.Classes;
 
 namespace UnitTests.Attributes
 {
@@ -12,18 +13,10 @@ namespace UnitTests.Attributes
             //Arrange
             Mage whiteMage = new Mage("Gandalf");
             whiteMage.LevelUp();
-            int level = 2;
-            int[] expected = new int[] { level, 2, 2, 13 };
-            //Act
-            int[] actual = new int[]
-            {
-                whiteMage.Level,
-                whiteMage.HeroAttributes.Strength,
-                whiteMage.HeroAttributes.Dexterity,
-                whiteMage.HeroAttributes.Intelligence
-            };
-            //Assert
-            Assert.Equal(expected, actual);
+            HeroAttributes expected = new HeroAttributes(2, 2, 13);
+            //Act and Assert
+            Assert.Equal(2,whiteMage.Level);
+            Assert.True(expected.Equals(whiteMage.HeroAttributes));
         }
         #endregion
 
@@ -33,18 +26,10 @@ namespace UnitTests.Attributes
         {
             Ranger elvenPrince = new Ranger("Legolas");
             elvenPrince.LevelUp();
-            int level = 2;
-            int[] expected = new int[] { level, 2, 12, 2 };
-            //Act
-            int[] actual = new int[]
-            {
-                elvenPrince.Level,
-                elvenPrince.HeroAttributes.Strength,
-                elvenPrince.HeroAttributes.Dexterity,
-                elvenPrince.HeroAttributes.Intelligence
-            };
-            //Assert
-            Assert.Equal(expected, actual);
+            HeroAttributes expected = new HeroAttributes(2, 12, 2);
+            //Act and Assert
+            Assert.Equal(2, elvenPrince.Level);
+            Assert.True(expected.Equals(elvenPrince.HeroAttributes));
         }
 
         #endregion
@@ -55,18 +40,10 @@ namespace UnitTests.Attributes
         {
             Rogue knight = new Rogue("Gwaine");
             knight.LevelUp();
-            int level = 2;
-            int[] expected = new int[] { level, 3, 10, 2 };
-            //Act
-            int[] actual = new int[]
-            {
-                knight.Level,
-                knight.HeroAttributes.Strength,
-                knight.HeroAttributes.Dexterity,
-                knight.HeroAttributes.Intelligence
-            };
-            //Assert
-            Assert.Equal(expected, actual);
+            HeroAttributes expected = new HeroAttributes(3, 10, 2);
+            //Act and Assert
+            Assert.Equal(2, knight.Level);
+            Assert.True(expected.Equals(knight.HeroAttributes));
         }
         #endregion
 
@@ -76,18 +53,10 @@ namespace UnitTests.Attributes
         {
             Warrior king = new Warrior("Arthur");
             king.LevelUp();
-            int level = 2;
-            int[] expected = new int[] { level, 8, 4, 2 };
-            //Act
-            int[] actual = new int[]
-            {
-                king.Level,
-                king.HeroAttributes.Strength,
-                king.HeroAttributes.Dexterity,
-                king.HeroAttributes.Intelligence
-            };
-            //Assert
-            Assert.Equal(expected, actual);
+            HeroAttributes expected = new HeroAttributes(8, 4, 2);
+            //Act and Assert
+            Assert.Equal(2, king.Level);
+            Assert.True(expected.Equals(king.HeroAttributes));
         }
         #endregion
     }

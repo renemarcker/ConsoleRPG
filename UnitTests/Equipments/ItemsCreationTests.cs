@@ -1,4 +1,5 @@
-﻿using ConsoleRPG.Items;
+﻿using ConsoleRPG.Heroes;
+using ConsoleRPG.Items;
 using ConsoleRPG.Items.Enums;
 
 namespace UnitTests.Equipments
@@ -14,19 +15,15 @@ namespace UnitTests.Equipments
             int requiredLevel = 2;
             ItemSlot itemSlot = ItemSlot.body;
             ArmorType armorType = ArmorType.Plate;
-            int strength = 1;
-            int dexterity = 0;
-            int intelligence = 0;
+            HeroAttributes attributes = new HeroAttributes(1, 0, 0);
             //Act
-            Armor commonBodyPlate = new Armor(name, requiredLevel, itemSlot, armorType, strength, dexterity, intelligence);
+            Armor commonBodyPlate = new Armor(name, requiredLevel, itemSlot, armorType, attributes);
             //Assert
             Assert.Equal(name,commonBodyPlate.Name);
             Assert.Equal(requiredLevel, commonBodyPlate.RequiredLevel);
             Assert.Equal(itemSlot, commonBodyPlate.Slot);
             Assert.Equal(armorType, commonBodyPlate.ArmorType);
-            Assert.Equal(strength, commonBodyPlate.ArmorAttributes.Strength);
-            Assert.Equal(dexterity, commonBodyPlate.ArmorAttributes.Dexterity);
-            Assert.Equal(intelligence, commonBodyPlate.ArmorAttributes.Intelligence);
+            Assert.True(attributes.Equals(commonBodyPlate.ArmorAttributes));
         }
         #endregion
 
