@@ -1,5 +1,6 @@
 ﻿using ConsoleRPG.Items;
 using ConsoleRPG.Items.Enums;
+using System.Data;
 
 namespace ConsoleRPG.Heroes
 {
@@ -26,7 +27,13 @@ namespace ConsoleRPG.Heroes
         public List <ArmorType> ValidArmorTypes { get => _validArmorTypes; }
 
 
-        public Hero(int level, int strength, int dexterity, int intelligence, List<WeaponType> weaponProficiency, List<ArmorType> armorProficiency) 
+        public Hero(
+            int level,
+            int strength,
+            int dexterity,
+            int intelligence,
+            List<WeaponType> weaponProficiency,
+            List<ArmorType> armorProficiency)
         { 
             _level = level;
             _heroAttributes.Strength = strength;
@@ -38,6 +45,15 @@ namespace ConsoleRPG.Heroes
         }
 
         public abstract void LevelUp();
+
+        public void EquipWeapon(Weapon weapon)
+        {
+            if (!ValidWeaponTypes.Contains(weapon.WeaponType))
+                throw new EquipException("The weapon is not valid for the given class.");
+            if (_level < weapon.RequiredLevel)
+                throw new EquipException("The hero do not meet the required level for item.");
+            _equipments[ItemSlot.weapon] = weapon;
+        }
 
     }
 }

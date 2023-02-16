@@ -1,4 +1,5 @@
 ﻿using ConsoleRPG.Items;
+using ConsoleRPG.Items.Enums;
 
 namespace UnitTests.Equipments
 {
@@ -11,8 +12,8 @@ namespace UnitTests.Equipments
             //Arrange
             string name = "Common Plate Chest";
             int requiredLevel = 2;
-            ConsoleRPG.Items.Enums.ItemSlot itemSlot = ConsoleRPG.Items.Enums.ItemSlot.body;
-            ConsoleRPG.Items.Enums.ArmorType armorType = ConsoleRPG.Items.Enums.ArmorType.Plate;
+            ItemSlot itemSlot = ItemSlot.body;
+            ArmorType armorType = ArmorType.Plate;
             int strength = 1;
             int dexterity = 0;
             int intelligence = 0;
@@ -36,7 +37,7 @@ namespace UnitTests.Equipments
             //Arrange
             string name = "Orc Slayer";
             int requiredLevel = 10;
-            ConsoleRPG.Items.Enums.WeaponType weaponType = ConsoleRPG.Items.Enums.WeaponType.Axe;
+            WeaponType weaponType = WeaponType.Axe;
             int dmg = 45;
             //Act
             Weapon legendaryAxe = new Weapon(name, requiredLevel, dmg, weaponType);
