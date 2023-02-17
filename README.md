@@ -53,9 +53,9 @@ The hero can display information: name, class, level, Total states and damage.
  - Equip weapon
  - The method to calculate the total attributes on the fly
  - The method to calculate the damage output on the fly
- - The method to display the player´s stats.
+ - The method to display the playerÂ´s stats.
 
-**Line Coverage: 99.5% (463 of 465)**
+$$\text{**Line Coverage: 99.5% (463 of 465)**}$$
 
 ## Status of the Project
 Only one week for the project and should be completed the 17. February 2023.
