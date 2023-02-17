@@ -6,6 +6,10 @@
         private int _dexterity;
         private int _intelligence;
 
+        public int Strength { get => _strength; }
+        public int Dexterity { get => _dexterity;  }
+        public int Intelligence { get => _intelligence; }
+
         public HeroAttributes(int strength, int dexterity, int intelligence)
         {
             _strength = strength;
@@ -16,6 +20,11 @@
         public static HeroAttributes operator +(HeroAttributes lhs, HeroAttributes rhs)
         {
             return new HeroAttributes(lhs._strength + rhs._strength, lhs._dexterity + rhs._dexterity, lhs._intelligence + rhs._intelligence);
+        }
+
+        public static HeroAttributes operator *(HeroAttributes lhs, HeroAttributes rhs)
+        {
+            return new HeroAttributes(lhs._strength * rhs._strength, lhs._dexterity * rhs._dexterity, lhs._intelligence * rhs._intelligence);
         }
 
         public override bool Equals(object? obj)

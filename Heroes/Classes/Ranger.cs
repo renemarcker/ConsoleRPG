@@ -5,7 +5,7 @@ namespace ConsoleRPG.Heroes.Classes
 {
     public class Ranger : Hero
     {
-        public Ranger(string name) : base(1, new HeroAttributes(1, 7, 1), new List<WeaponType> { WeaponType.Bow }, new List<ArmorType> { ArmorType.Leather, ArmorType.Mail })
+        public Ranger(string name) : base(1, new HeroAttributes(1, 7, 1), new HeroAttributes(0,1,0), new List<WeaponType> { WeaponType.Bow }, new List<ArmorType> { ArmorType.Leather, ArmorType.Mail })
         {
             _name = name;
         }

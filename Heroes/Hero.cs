@@ -8,7 +8,8 @@ namespace ConsoleRPG.Heroes
     {
         protected string _name;
         protected int _level;
-        protected HeroAttributes _heroAttributes = new HeroAttributes(0,0,0);
+        protected HeroAttributes _heroAttributes = new (0,0,0);
+        private HeroAttributes _damageAttributes = new(0, 0, 0);
         protected List<WeaponType> _validWeaponTypes = new List<WeaponType>();
         protected List<ArmorType> _validArmorTypes = new List<ArmorType>();
         protected Dictionary<ItemSlot, Item> _equipments = new Dictionary<ItemSlot, Item>()
@@ -26,15 +27,16 @@ namespace ConsoleRPG.Heroes
         public List <WeaponType> ValidWeaponTypes { get => _validWeaponTypes; }
         public List <ArmorType> ValidArmorTypes { get => _validArmorTypes; }
 
-
         public Hero(
             int level,
             HeroAttributes heroAttributes,
+            HeroAttributes damageAttributes,
             List<WeaponType> weaponProficiency,
             List<ArmorType> armorProficiency)
         { 
             _level = level;
             _heroAttributes = heroAttributes;
+            _damageAttributes = damageAttributes;
             _validWeaponTypes = weaponProficiency;
             _validArmorTypes = armorProficiency;
 
@@ -74,5 +76,17 @@ namespace ConsoleRPG.Heroes
             }
             return total;
         }
+
+        public decimal Damage()
+        {
+            Weapon equipedWeapon = (Weapon)Equipments[ItemSlot.weapon];
+            int weaponDamage = 1;
+            if (equipedWeapon != null) weaponDamage = equipedWeapon.Damage;
+            HeroAttributes totalAttributes = TotalAttributes()*_damageAttributes;
+            int damageAttribute = totalAttributes.Strength + totalAttributes.Dexterity + totalAttributes.Intelligence;
+            decimal damage = weaponDamage * (1 + damageAttribute / 100);
+            return Decimal.Round(damage,2);
+        }
+
     }
 }

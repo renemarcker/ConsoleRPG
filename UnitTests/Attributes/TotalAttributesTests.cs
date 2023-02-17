@@ -68,7 +68,7 @@ namespace UnitTests.Attributes
             HeroAttributes plateAttributes = new HeroAttributes(5, 1, 0);
             HeroAttributes mailAttributes = new HeroAttributes(2, 3, 2);
             Armor plateArmor = new("Plate Chest", 1, ItemSlot.body, ArmorType.Plate, plateAttributes);
-            Armor mailArmor = new("Plate Chest", 1, ItemSlot.body, ArmorType.Mail, mailAttributes);
+            Armor mailArmor = new("Mail Chest", 1, ItemSlot.body, ArmorType.Mail, mailAttributes);
             peasant.EquipArmor(plateArmor);
             peasant.EquipArmor(mailArmor);
             HeroAttributes expected = peasant.HeroAttributes + mailAttributes; // = (7,5,3)
