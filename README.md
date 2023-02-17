@@ -1,8 +1,10 @@
 # ConsoleRPG
 
 ## Background
-"ConsoleRPG" is an assignment from the Accelerated Learning course in Fullstack .Net developer (Noroff). ConsoleRPG is an console application wroten in C# and utilize Unit Tests, GIT usage, and CI/CD.  
-
+"ConsoleRPG" is an assignment from the Accelerated Learning course in Fullstack .Net developer (Noroff). ConsoleRPG is an console application wroten in C# and utilize Unit Tests, GIT usage, and CI/CD. The development of this application have been Test-Driven Development.
+## Class Interaction Diagram
+To begin the implementation of the application, there have been developed a class interaction diagram to show the interaction between classes.The class interaction diagram can be found in the ClassInteractionDiagram.pdf. 
+As the diagram is created before any code is written and will not be updated (as it will be part of the overall grade), the code may vary some degree from the diagram. The diagram also contain the calculation on some of the methods.
 ## Description
 The console application do not focus on a playable application, but more illustrate the fundamentals of C# and Unit tests. There shall be a abstract class "Hero", which there is four classes (Mage, Ranger, Rogue and Warrior). The constructor of the hero should only be based on a name, but should contain level, states and equipment slots.
 The hero have methods to level up, equip weapon and armor to specific slots (head, weapon, body and legs). The states is based on the Three-Stat System (Strength, Dexterity and Intelligence), where starting states varies on the class. When hero level up, the hero's states increases, also depend on the class.
@@ -25,7 +27,7 @@ Beside of the states of the hero built on the level and class type, armor can gi
 | Warrior       | Axe, Hammer, Sword | Mail, Plate   |
 
 
-**Total States:**
+**Total Attributes:**
 
 $$X = Class_X(level) + (\sum Armor_{X}\text{, } \forall  Armor_{slots}  )$$
 
@@ -42,10 +44,18 @@ Where $W = $ damage from equipped weapon and unequipped give 1 dmg. The $C$ note
 
 **Hero Display**
 The hero can display information: name, class, level, Total states and damage.
+## List of test which have been done in order (TDD):
+ - The constructor for hero class and each subclass
+ - The level up method, also for each subclass
+ - Weapon creation
+ - Armor creation
+ - Equip armor
+ - Equip weapon
+ - The method to calculate the total attributes on the fly
+ - The method to calculate the damage output on the fly
+ - The method to display the player´s stats.
 
-## Class Interaction Diagram
-To begin the implementation of the application, there have been developed a class interaction diagram to show the interaction between classes.The class interaction diagram can be found in the ClassInteractionDiagram.pdf. 
-As the diagram is created before any code is written and will not be updated (as it will be part of the overall grade), the code may vary some degree from the diagram. The diagram also contain the calculation on some of the metodes.
+
 ## Status of the Project
 Only one week for the project and should be completed the 17. February 2023.
 ## Git Commits

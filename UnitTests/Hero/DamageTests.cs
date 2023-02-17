@@ -15,7 +15,8 @@ namespace UnitTests.Hero
         {
             //Arrange
             Mage whiteMage = new("Gandalf");
-            decimal control = 1 + (8 / 100);
+            decimal damageAttribute = 8;
+            decimal control = 1 * (1 + (damageAttribute / 100));
             decimal expected = Decimal.Round(control, 2);
             //Act
             decimal actual = whiteMage.Damage();
@@ -30,7 +31,8 @@ namespace UnitTests.Hero
         {
             //Arrange
             Ranger elevenPrince = new("Legolas");
-            decimal control = 1 + (7 / 100);
+            decimal damageAttribute = 7;
+            decimal control = 1 * (1 + (damageAttribute / 100));
             decimal expected = Decimal.Round(control, 2);
             //Act
             decimal actual = elevenPrince.Damage();
@@ -45,7 +47,8 @@ namespace UnitTests.Hero
         {
             //Arrange
             Rogue knight = new("Gwaine");
-            decimal control = 1 + (6 / 100);
+            decimal damageAttribute = 6;
+            decimal control = 1 * (1 + (damageAttribute / 100));
             decimal expected = Decimal.Round(control, 2);
             //Act
             decimal actual = knight.Damage();
@@ -60,7 +63,8 @@ namespace UnitTests.Hero
         {
             //Arrange
             Warrior king = new("Arthur");
-            decimal control = 1 + (5 / 100);
+            decimal damageAttribute = 5;
+            decimal control = 1 * (1 + (damageAttribute / 100));
             decimal expected = Decimal.Round(control, 2);
             //Act
             decimal actual = king.Damage();
@@ -79,7 +83,8 @@ namespace UnitTests.Hero
             Warrior codeWarrior = new("Sean");
             Weapon twinBlade = new("Bug Slayer", 1, 42, WeaponType.Hammer);
             codeWarrior.EquipWeapon(twinBlade);
-            decimal control = 42*(1 + (5 / 100));
+            decimal damageAttribute = 5;
+            decimal control = 42 * (1 + (damageAttribute / 100));
             decimal expected = Decimal.Round(control, 2);
             //Act
             decimal actual = codeWarrior.Damage();
@@ -98,7 +103,8 @@ namespace UnitTests.Hero
             Weapon longSword = new("Excalibur",1,122,WeaponType.Sword);
             codeWarrior.EquipWeapon(twinBlade);
             codeWarrior.EquipWeapon(longSword);
-            decimal control = 122 * (1 + (5 / 100));
+            decimal damageAttribute = 5;
+            decimal control = 122 * (1 + (damageAttribute/ 100));
             decimal expected = Decimal.Round(control, 2);
             //Act
             decimal actual = codeWarrior.Damage();
@@ -126,7 +132,7 @@ namespace UnitTests.Hero
             codeWarrior.LevelUp(); // lvl 10
             codeWarrior.EquipWeapon(longSword);
             codeWarrior.EquipArmor(legendaryArmor);
-            int damageAttribute = 32+42; // Strength + weapon... (3*level+2) + 42
+            decimal damageAttribute = 74; // Strength + weapon... (3*level+2) + 42
             decimal control = longSword.Damage * (1 + (damageAttribute / 100));
             decimal expected = Decimal.Round(control, 2);
             //Act

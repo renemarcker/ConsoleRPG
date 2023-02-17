@@ -1,6 +1,6 @@
 ﻿using ConsoleRPG.Items;
 using ConsoleRPG.Items.Enums;
-using System.Data;
+using System.Text;
 
 namespace ConsoleRPG.Heroes
 {
@@ -83,9 +83,25 @@ namespace ConsoleRPG.Heroes
             int weaponDamage = 1;
             if (equipedWeapon != null) weaponDamage = equipedWeapon.Damage;
             HeroAttributes totalAttributes = TotalAttributes()*_damageAttributes;
-            int damageAttribute = totalAttributes.Strength + totalAttributes.Dexterity + totalAttributes.Intelligence;
-            decimal damage = weaponDamage * (1 + damageAttribute / 100);
+            decimal damageAttribute = totalAttributes.Strength + totalAttributes.Dexterity + totalAttributes.Intelligence;
+            decimal damage = weaponDamage * (1 + (damageAttribute / 100));
             return Decimal.Round(damage,2);
+        }
+
+        public string Display()
+        {
+            StringBuilder heroDisplay = new("The states of the Hero:\n\n");
+            HeroAttributes totalAttributes = TotalAttributes();
+            decimal damage = Damage();
+            heroDisplay.AppendFormat("Name:         {0}\n",_name);
+            heroDisplay.AppendFormat("Class:        {0}\n",this.GetType().Name);
+            heroDisplay.AppendFormat("Level:        {0}\n", _level);
+            heroDisplay.AppendFormat("Strength:     {0}\n",totalAttributes.Strength);
+            heroDisplay.AppendFormat("Dexterity:    {0}\n", totalAttributes.Dexterity);
+            heroDisplay.AppendFormat("Intelligence: {0}\n", totalAttributes.Intelligence);
+            heroDisplay.AppendFormat("Damage:       {0}\n", damage);
+            Console.WriteLine(heroDisplay);
+            return heroDisplay.ToString();
         }
 
     }
