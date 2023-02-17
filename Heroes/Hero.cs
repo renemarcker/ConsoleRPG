@@ -44,6 +44,11 @@ namespace ConsoleRPG.Heroes
 
         public abstract void LevelUp();
 
+        /// <summary>
+        /// Equip an given weapon and replace if already equipped weapon.
+        /// </summary>
+        /// <param name="weapon">Weapon that is equipped.</param>
+        /// <exception cref="EquipException">When the weapon is invalid based on weapon proficiency of the class and level.</exception>
         public void EquipWeapon(Weapon weapon)
         {
             if (!ValidWeaponTypes.Contains(weapon.WeaponType))
@@ -52,7 +57,11 @@ namespace ConsoleRPG.Heroes
                 throw new EquipException("The hero do not meet the required level for item.");
             _equipments[ItemSlot.weapon] = weapon;
         }
-
+        /// <summary>
+        /// Equip an given armor in its slot and replace if already equipped armor on give slot.
+        /// </summary>
+        /// <param name="armor">Armor that is equipped.</param>
+        /// <exception cref="EquipException">When the armor is invalid based on the armor proficiency of the class and level.</exception>
         public void EquipArmor(Armor armor)
         {
             if (!ValidArmorTypes.Contains(armor.ArmorType))
@@ -61,7 +70,10 @@ namespace ConsoleRPG.Heroes
                 throw new EquipException("The hero do not meet the required level for item.");
             _equipments[armor.Slot] = armor;
         }
-
+        /// <summary>
+        /// Calculate the total attributes of the Hero based on base, the gain through level up and equipped armors.
+        /// </summary>
+        /// <returns>The total attributes as new Hero Attributes.</returns>
         public HeroAttributes TotalAttributes()
         {
             HeroAttributes total = new (0, 0, 0);
@@ -76,7 +88,13 @@ namespace ConsoleRPG.Heroes
             }
             return total;
         }
-
+        /// <summary>
+        /// Calculate the damage output of the hero based on equation:
+        /// <para>X*(1+Y/100)</para>
+        /// <para>Where:</para>
+        /// <para>X = damage from the weapon and unarmed = 1 damage</para>
+        /// <para>Y = damage attribute of the class</para>
+        /// <returns>Total of damage as decimal rounded two decimals.</returns>
         public decimal Damage()
         {
             Weapon equipedWeapon = (Weapon)Equipments[ItemSlot.weapon];
@@ -88,6 +106,10 @@ namespace ConsoleRPG.Heroes
             return Decimal.Round(damage,2);
         }
 
+        /// <summary>
+        /// Display the stats of the hero.
+        /// </summary>
+        /// <returns>name, class, level, total strength, total dexterity, total intelligence and damage.</returns>
         public string Display()
         {
             StringBuilder heroDisplay = new("The states of the Hero:\n\n");

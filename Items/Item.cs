@@ -12,7 +12,5 @@ namespace ConsoleRPG.Items
         public string Name { get => _name; set => _name = value; }
         public int RequiredLevel { get => _requiredLevel; set => _requiredLevel = value; }
         public ItemSlot Slot { get => _slot; set => _slot = value; }
-
-        public Item( ) { }
     }
 }

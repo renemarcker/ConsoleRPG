@@ -55,6 +55,7 @@ The hero can display information: name, class, level, Total states and damage.
  - The method to calculate the damage output on the fly
  - The method to display the player´s stats.
 
+**Line Coverage: 99.5% (463 of 465)**
 
 ## Status of the Project
 Only one week for the project and should be completed the 17. February 2023.

@@ -1,5 +1,4 @@
-﻿
-using ConsoleRPG.Heroes;
+﻿using ConsoleRPG.Heroes;
 using ConsoleRPG.Items.Enums;
 
 namespace ConsoleRPG.Items
